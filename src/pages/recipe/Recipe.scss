@@ -1,0 +1,42 @@
+.recipe {
+  background: #fff;
+  max-width: 1200px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+
+  h2 {
+    margin-bottom: 10px;
+    text-decoration: underline;
+  }
+
+  ol {
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    margin-top: 0;
+
+    li {
+      list-style-type: none;
+      margin-right: 10px;
+      color: #777;
+
+      &:first-child::before {
+        content: "Ingredients: ";
+      }
+
+      &::after {
+        content: " |";
+      }
+
+      &:last-child::after {
+        content: "";
+      }
+    }
+  }
+
+  .method {
+    line-height: 1.5em;
+  }
+}
