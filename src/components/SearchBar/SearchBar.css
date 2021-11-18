@@ -1,0 +1,17 @@
+.search-bar {
+  margin: 0px 8px;
+}
+
+.search-bar label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search-bar label span {
+  margin-right: 5px;
+}
+/*# sourceMappingURL=SearchBar.css.map */

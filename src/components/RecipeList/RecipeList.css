@@ -5,8 +5,8 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-column-gap: 25px;
-          column-gap: 25px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 40px auto;
@@ -20,19 +20,20 @@
   border-radius: 4px;
   -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05);
           box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05);
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-transform: rotate3d(0, 0, 0, 0);
+          transform: rotate3d(0, 0, 0, 0);
   position: relative;
-  margin-bottom: 25px;
+  margin: 0px 5px;
+  margin-bottom: 20px;
 }
 
 .recipe-list .card:hover {
-  -webkit-transform: rotate(3deg);
-          transform: rotate(3deg);
+  -webkit-transform: rotate3d(0, 0.5, -0.1, 10deg);
+          transform: rotate3d(0, 0.5, -0.1, 10deg);
+  -webkit-box-shadow: -6px 3px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: -6px 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .recipe-list .card h3 {

@@ -1,7 +1,7 @@
 .recipe-list {
   display: flex;
   justify-content: flex-start;
-  column-gap: 25px;
+  column-gap: 10px;
   flex-wrap: wrap;
   margin: 40px auto;
 
@@ -12,13 +12,15 @@
     padding: 20px;
     border-radius: 4px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-    transform: rotate(0deg);
+    transition: all 0.3s ease-out;
+    transform: rotate3d(0, 0, 0, 0);
     position: relative;
-    margin-bottom: 25px;
+    margin: 0px 5px;
+    margin-bottom: 20px;
 
     &:hover {
-      transform: rotate(3deg);
+      transform: rotate3d(0, 0.5, -0.1, 10deg);
+      box-shadow: -6px 3px 6px rgba(0, 0, 0, 0.1);
     }
 
     h3 {

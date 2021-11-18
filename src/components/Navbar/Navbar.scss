@@ -8,28 +8,36 @@ $white: #fff;
   nav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
-  }
 
-  a {
-    &.brand {
-      margin-right: auto;
-      color: $white;
-      text-decoration: none;
+    a {
+      &.brand {
+        color: $white;
+      }
+
+      &:last-child {
+        color: $white;
+        text-decoration: none;
+        padding: 8px;
+        border: 1px solid #fff;
+        border-radius: 4px;
+      }
+
+      &:last-child:hover {
+        background-color: $white;
+        color: #333;
+      }
     }
 
-    &:last-child {
-      color: $white;
-      text-decoration: none;
-      padding: 8px;
-      border: 1px solid #fff;
-      border-radius: 4px;
-    }
-
-    &:last-child:hover {
-      background-color: $white;
-      color: #333;
+    @media screen and (max-width: 905px) {
+      justify-content: space-around;
+      .brand,
+      .search-bar {
+        margin-bottom: 10px;
+      }
     }
   }
 }

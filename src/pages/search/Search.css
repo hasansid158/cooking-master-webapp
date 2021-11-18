@@ -1,1 +1,10 @@
-/* No CSS *//*# sourceMappingURL=Search.css.map */
+.search {
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+.search h2 {
+  text-align: center;
+  margin: 20px auto 0px;
+}
+/*# sourceMappingURL=Search.css.map */
