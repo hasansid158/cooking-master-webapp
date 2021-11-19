@@ -1,0 +1,27 @@
+.theme-selector {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1200px;
+  margin: 20px auto 0px auto;
+}
+
+.theme-selector .theme-buttons {
+  margin-right: 20px;
+}
+
+.theme-selector .theme-buttons div {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: 15px;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=ThemeSelector.css.map */

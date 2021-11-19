@@ -26,6 +26,14 @@
     h3 {
       color: #555;
       margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      svg {
+        fill: #666;
+        cursor: pointer;
+      }
     }
     p {
       color: #999;
@@ -38,10 +46,9 @@
       line-height: 1.5em;
     }
     a {
-      color: #555;
+      color: #fff;
       text-decoration: none;
       display: block;
-      background: #e2e2e2;
       font-size: 0.9em;
       width: 120px;
       text-align: center;

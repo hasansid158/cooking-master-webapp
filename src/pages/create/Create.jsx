@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import useFetch from "../../Hooks/useFetch";
+import { projectFirestore } from "../../firebase/config";
+import { UseThemeContext } from "../../Hooks/UseThemeContext/useThemeContext";
 import "./Create.css";
 
 export default function Create() {
@@ -10,29 +11,28 @@ export default function Create() {
   const [ingredient, setIngredient] = useState("");
   const [allIngredients, setAllIngredients] = useState([]);
 
-  const { postRequest, data } = useFetch(
-    "http://localhost:3000/recipes",
-    "POST"
-  );
+  const { color } = UseThemeContext();
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (data) navigate("/");
-  }, [data, navigate]);
-
   const ingredientEl = useRef();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    postRequest({
+    const doc = {
       title,
       cookingTime: timeToCock + " minutes",
       method,
       ingredients: allIngredients,
-    });
-    console.log(data);
+    };
+
+    try {
+      await projectFirestore.collection("recipes").add(doc);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleAddIngredient = (e) => {
@@ -74,7 +74,9 @@ export default function Create() {
               }}
               ref={ingredientEl}
             />
-            <button onClick={handleAddIngredient}>Add</button>
+            <button onClick={handleAddIngredient} style={{ background: color }}>
+              Add
+            </button>
           </div>
         </label>
         <p>{`Ingredients: ${allIngredients}`}</p>
@@ -103,7 +105,9 @@ export default function Create() {
           />
         </label>
 
-        <button type="submit">Add Recipe</button>
+        <button type="submit" style={{ background: color }}>
+          Add Recipe
+        </button>
       </form>
     </div>
   );

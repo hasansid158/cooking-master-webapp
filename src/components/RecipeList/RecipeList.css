@@ -39,6 +39,20 @@
 .recipe-list .card h3 {
   color: #555;
   margin-bottom: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.recipe-list .card h3 svg {
+  fill: #666;
+  cursor: pointer;
 }
 
 .recipe-list .card p {
@@ -54,10 +68,9 @@
 }
 
 .recipe-list .card a {
-  color: #555;
+  color: #fff;
   text-decoration: none;
   display: block;
-  background: #e2e2e2;
   font-size: 0.9em;
   width: 120px;
   text-align: center;
